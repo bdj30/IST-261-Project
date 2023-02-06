@@ -1,4 +1,4 @@
-public class Age {
+public class InsertAge {
     private int age;
 
     public Age(int age) {
