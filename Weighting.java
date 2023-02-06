@@ -1,4 +1,4 @@
-public class Weighting {
+public class InsertWeight {
     private double weight;
     public Weighting(double weight) {
         this.weight = weight;
