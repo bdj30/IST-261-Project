@@ -1,4 +1,4 @@
-public class Height {
+public class InsertHeight {
     private int height;
 
     public Height(int height) {
