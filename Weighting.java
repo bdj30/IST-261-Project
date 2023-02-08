@@ -1,6 +1,6 @@
 public class Weighting {
     private double weight;
-    public InsertWeight(double weight) {
+    public Weighting(double weight) {
         this.weight = weight;
 
     }
