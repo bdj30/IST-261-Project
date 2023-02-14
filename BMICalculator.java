@@ -4,8 +4,8 @@ public class BMICalculator {
     
    public static void main(String args[]) 
    {
-      new TestHarness();
-      //new MainGUI();
+      //new TestHarness();
+      new LoginGUI();
 //      Scanner sc = new Scanner(System.in);
 //      System.out.print("Input weight in kilogram: ");
 //      double weight = sc.nextDouble();
