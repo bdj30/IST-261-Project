@@ -1,6 +1,8 @@
 public class TestHarness {
 
   public TestHarness() {
-  
-    // Test the login class
+  // Test the login class
+    Login login = new Login("uName" + "pWord");
+    
+    
     
