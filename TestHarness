@@ -8,8 +8,15 @@ public class TestHarness {
     
     System.out.println("Login successful");
     System.out.println("Login info: " + login.getuName() + login.getpWord();
+    }
     
+  // Test the user class
+    User user = new User("Name" + "Age" + "Height" + "Weight");
+     
+    if(user ! = null){
     
-  // Test the 
+    System.out.println("New user successfully created");
+    System.out.println("User info: " + user.getName + user.set
+     
     
     
