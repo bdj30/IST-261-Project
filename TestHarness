@@ -1,0 +1,6 @@
+public class TestHarness {
+
+  public TestHarness() {
+  
+    // Test the login class
+    
