@@ -7,7 +7,7 @@ public class TestHarness {
     if(login ! = null){
     
     System.out.println("Login successful");
-    System.out.println("Login info: " + login.getuName() + login.getpWord();
+    System.out.println("Login info: " + login.getuName() + login.getpWord());
     }
     
   // Test the user class
@@ -16,7 +16,9 @@ public class TestHarness {
     if(user ! = null){
     
     System.out.println("New user successfully created");
-    System.out.println("User info: " + user.getName + user.set
+    System.out.println("User info: " + user.getName() + user.getAge() + user.getHeight() + user.getWeight());
+    
+  // Test the 
      
     
     
