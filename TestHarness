@@ -17,8 +17,15 @@ public class TestHarness {
     
     System.out.println("New user successfully created");
     System.out.println("User info: " + user.getName() + user.getAge() + user.getHeight() + user.getWeight());
+    }
     
-  // Test the 
+  // Test the convert class
+     Convert convert = new Convert("Option" + "Weight");
      
+     if(convert ! = null){
+     
+     System.out.println("New conversion successful");
+     System.out.println("Conversion: " + convert.getOption() + convert.getWeight());
+     }
     
     
