@@ -1,5 +1,4 @@
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 
 public class MainGUI {
@@ -18,7 +17,17 @@ public class MainGUI {
         // getting user info
         //  make labels for name, age, weight, height
 
+        //labels
+        JLabel name = new JLabel("Enter Name:");
+        JLabel age = new JLabel("Enter age: ");
+        JLabel weight = new JLabel("Enter weight: ");
+        JLabel height = new JLabel("Enter height: ");
 
+        //text feilds
+        JTextField tName = new JTextField();
+        JTextField tAge = new JTextField();
+        JTextField tWeight = new JTextField();
+        JTextField tHeight = new JTextField();
 
 
 
