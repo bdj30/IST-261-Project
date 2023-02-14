@@ -7,6 +7,9 @@ public class TestHarness {
     if(login ! = null){
     
     System.out.println("Login successful");
-    System.out.println("Login info: " + get
+    System.out.println("Login info: " + login.getuName() + login.getpWord();
+    
+    
+  // Test the 
     
     
