@@ -1,11 +1,13 @@
+import com.sun.tools.javac.Main;
+
 import java.util.Scanner;
 
 public class BMICalculator {
     
    public static void main(String args[]) 
    {
-      //new TestHarness();
       new LoginGUI();
+      //new MainGUI();
 //      Scanner sc = new Scanner(System.in);
 //      System.out.print("Input weight in kilogram: ");
 //      double weight = sc.nextDouble();

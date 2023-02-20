@@ -1,8 +1,9 @@
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
+import java.util.HashMap;
 
 public class LoginGUI {
+    private HashMap<String,String> users = new HashMap<>();
     public LoginGUI(){
         JFrame frame = new JFrame("Login");
         frame.setLayout(new GridLayout(3,1));
@@ -22,7 +23,7 @@ public class LoginGUI {
         //for other buttons
         JButton loginBut = new JButton("Login");
         JButton resetPw = new JButton("cant Login");
-        JButton creatAcc = new JButton("Create Account");
+        JButton creatAcc = new JButton("Create User");
 
         //adding
         pan1.add(but);
@@ -39,26 +40,17 @@ public class LoginGUI {
         frame.add(pan2);
         frame.add(pan3);
 
-        frame.setSize(250,250);
+
+
+        //events
+        loginBut.addActionListener(e ->{
+            if (e.getSource() == loginBut && !tUser.getText().equals("")&& !tPass.getText().equals("")){
+                System.out.println("it works");
+            }
+        });
+
+        frame.setSize(200,250);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 }
-
-
-
-
-
-
-
-//        JLabel name = new JLabel("Enter Name:");
-//        JLabel age = new JLabel("Enter age: ");
-//        JLabel weight = new JLabel("Enter weight: ");
-//        JLabel height = new JLabel("Enter height: ");
-//
-//        //text feilds
-//        JTextField tName = new JTextField();
-//        JTextField tAge = new JTextField();
-//        JTextField tWeight = new JTextField();
-//        JTextField tHeight = new JTextField();
-
