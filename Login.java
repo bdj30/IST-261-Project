@@ -31,4 +31,9 @@ public class Login {
                 ", pWord='" + pWord + '\'' +
                 '}';
     }
+    
+public class User extends Login {
+    private String name;
+    private int age;
+    
 }
