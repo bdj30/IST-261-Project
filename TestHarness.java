@@ -28,4 +28,7 @@ public class TestHarness {
             System.out.println("Conversion: " + convert+ "\n----------------------------");
         }
     }
+    
+    public testClassHierarchy() {
+        
 }
