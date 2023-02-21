@@ -33,7 +33,7 @@ public class TestHarness {
     
     public testClassHierarchy() {
         ArrayList<Object> myArrayList = new ArrayList<Object>();
-        testData option = new option();
+        TrackData option = new option();
         User uName = new uName();
         myArrayList.add();
         myArrayList.add();
