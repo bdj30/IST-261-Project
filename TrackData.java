@@ -1,8 +1,11 @@
+import java.util.Optional;
 
 public class TrackData extends Convert{
     int day;
     String month;
     int year;
+    int option;
+    double initialWeight;
 
     public TrackData(int option, double initialWeight, int day, String month, int year) {
         super(option, initialWeight);
@@ -33,6 +36,21 @@ public class TrackData extends Convert{
 
     public void setYear(int year) {
         this.year = year;
+    }
+
+    @Override//override for assignment
+    public double convertion(int op){
+        if (op == 0) {
+            convertedWeight = lbsToKg();
+            this.convertedWeight = convertedWeight * 5;
+            return convertedWeight;
+        }
+        if(op == 1){
+            convertedWeight = kgToLbs();
+            this.convertedWeight = convertedWeight * 5;
+            return convertedWeight;
+        }
+        else return 0.0;
     }
 
     @Override

@@ -1,10 +1,11 @@
-public class User {
+public class User extends Login{
     private String name;
     private int age;
     private double weight;
     private double height;
 
-    public User(String name, int age, double weight, double height) {
+    public User(String name, int age, double weight, double height, String uName, String pWord) {
+        super(uName, pWord);
         this.name = name;
         this.age = age;
         this.weight = weight;
@@ -42,6 +43,11 @@ public class User {
 
     public void setHeight(double height) {
         this.height = height;
+    }
+
+    @Override//override for assignment
+    public void setpWord(String pWord) {
+        this.pWord = pWord + "YeeHa";
     }
 
     @Override

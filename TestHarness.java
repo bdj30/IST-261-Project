@@ -31,15 +31,35 @@ public class TestHarness {
         }
     }
     
-    public testClassHierarchy() {
-        ArrayList<Object> myArrayList = new ArrayList<Object>();
-        TrackData day = new TrackData();
-        User uName = new User();
-        myArrayList.add("Monday");
-        myArrayList.add("BlakeJ");
-        
-        for(Object element : myArrayList) {
-            System.out.println(element);
+    public void testClassHierarchy() {
+        ArrayList<Login> trackList = new ArrayList<Login>();
+        ArrayList<Convert> youSir = new ArrayList<Convert>();
+
+        Login day = new Login("User","Pass");
+        Convert uName = new Convert(1, 200);
+        TrackData tr = new TrackData(1, 200, 20, "Feb", 2023);
+        User u = new User("Me", 19, 200, 62, "User", "Pass");
+        trackList.add(day);
+        youSir.add(uName);
+
+        for(Login e : trackList) {
+            System.out.println(e);
         }
+        for(Convert e : youSir) {
+            System.out.println(e);
+        }
+        System.out.println("-------------------" + "\n" + "Original classes:");
+
+        //original methods
+        uName.lbsToKg();
+        System.out.println(uName.getConvertedWeight());
+        day.setpWord("bob");
+        System.out.println(day.getpWord() +"\n"+ "------------\n" + "OverWritten classes");
+
+        //Overwritten methods
+        tr.convertion(1);
+        System.out.println(tr.getConvertedWeight());
+        u.setpWord("Bob");
+        System.out.println(u.getpWord());
     }
 }

@@ -1,6 +1,6 @@
 public class Login {
     private String uName;
-    private String pWord;
+    protected String pWord;
 
     public Login(String uName, String pWord) {
         this.uName = uName;
@@ -31,4 +31,6 @@ public class Login {
                 ", pWord='" + pWord + '\'' +
                 '}';
     }
+    
+
 }

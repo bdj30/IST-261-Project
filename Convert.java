@@ -2,9 +2,9 @@ public class Convert {
     //for now 0 = convert to kg, 1 = convert to lbs
     private int option;
     private double initialWeight;
-    private double convertedWeight;
+    protected double convertedWeight;
     private final double kg  = 2.2046226218; // 1 kg per lbs
-    private final double lbs = 0.45359237; // 1 lbs per kilo
+    private static final double lbs = 0.45359237; // 1 lbs per kilo
 
 
     public Convert(int option, double initialWeight) {
@@ -13,14 +13,16 @@ public class Convert {
         convertedWeight = convertion(option);
     }
 
-    //check to see what convertion were doing and do it
+    //check to see what conversion were doing and do it
     public double convertion(int op){
         if (op == 0) {
             convertedWeight = lbsToKg();
+            this.convertedWeight = convertedWeight;
             return convertedWeight;
         }
         if(op == 1){
             convertedWeight = kgToLbs();
+            this.convertedWeight = convertedWeight;
             return convertedWeight;
         }
         else return 0.0;
@@ -59,6 +61,14 @@ public class Convert {
 
     public void setInitialWeight(double initialWeight) {
         this.initialWeight = initialWeight;
+    }
+
+    public double getKg() {
+        return kg;
+    }
+
+    public static double getLbs() {
+        return lbs;
     }
 
     @Override
