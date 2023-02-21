@@ -31,18 +31,4 @@ public class Login {
                 ", pWord='" + pWord + '\'' +
                 '}';
     }
-    
-public class User extends Login {
-    private String name;
-    private int age;
-    
-    public User(String uName, String pWord, String name, int age){
-        super(uName, pWord);
-        this.name = name;
-        this.age = age;
-    }
-    
-    public void viewProfile(String uName, String pWord) {
-    }
-}
 }
