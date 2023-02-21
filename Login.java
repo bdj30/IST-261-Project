@@ -42,7 +42,7 @@ public class User extends Login {
         this.age = age;
     }
     
-    public void viewProfile(){
+    public void viewProfile(String uName, String pWord) {
     }
 }
 }
