@@ -33,8 +33,8 @@ public class TestHarness {
     
     public testClassHierarchy() {
         ArrayList<Object> myArrayList = new ArrayList<Object>();
-        TrackData day = new day();
-        User uName = new uName();
+        TrackData day = new TrackData();
+        User uName = new User();
         myArrayList.add("Monday");
         myArrayList.add("BlakeJ");
     }
