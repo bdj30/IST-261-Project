@@ -38,7 +38,7 @@ public class TestHarness {
         myArrayList.add("Monday");
         myArrayList.add("BlakeJ");
         
-        for(String element : myArrayList) {
+        for(Object element : myArrayList) {
             System.out.println(element);
         }
     }
