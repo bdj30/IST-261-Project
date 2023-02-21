@@ -37,5 +37,9 @@ public class TestHarness {
         User uName = new User();
         myArrayList.add("Monday");
         myArrayList.add("BlakeJ");
+        
+        for(String element : myArrayList) {
+            System.out.println(element);
+        }
     }
 }
