@@ -30,5 +30,7 @@ public class TestHarness {
     }
     
     public testClassHierarchy() {
-        
+        ArrayList<Object> myArrayList = new ArrayList<Object>();
+        myArrayList.add(
+        myArrayList.add(
 }
