@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class TestHarness {
     public TestHarness() {
         // Test the login class
@@ -31,6 +33,9 @@ public class TestHarness {
     
     public testClassHierarchy() {
         ArrayList<Object> myArrayList = new ArrayList<Object>();
-        myArrayList.add(
-        myArrayList.add(
+        Option option = new option();
+        UName uName = new uName();
+        myArrayList.add(option);
+        myArrayList.add(uName);
+    }
 }
