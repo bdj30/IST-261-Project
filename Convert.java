@@ -1,4 +1,4 @@
-public class Convert extends impConvert {
+public class Convert implements impConvert {
     //for now 0 = convert to kg, 1 = convert to lbs
     private int option;
     private double initialWeight;

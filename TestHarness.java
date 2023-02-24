@@ -51,7 +51,7 @@ public class TestHarness {
         System.out.println("-------------------" + "\n" + "Original classes:");
 
         //original methods
-        uName.lbsToKg();
+        uName.kgCon();
         System.out.println(uName.getConvertedWeight());
         day.setpWord("bob");
         System.out.println(day.getpWord() +"\n"+ "------------\n" + "OverWritten classes");
@@ -61,5 +61,15 @@ public class TestHarness {
         System.out.println(tr.getConvertedWeight());
         u.setpWord("Bob");
         System.out.println(u.getpWord());
+    }
+
+    public void testInterface(){
+       ArrayList<impConvert> impLists = new ArrayList<>();
+       Convert con = new Convert(1,200);
+       impLists.add(con);
+       con.kgCon();
+       con.lbsCon();
+
+
     }
 }

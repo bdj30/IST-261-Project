@@ -1,6 +1,6 @@
 import static java.lang.Math.pow;
 
-public class FindBMI extends impBMI {
+public class FindBMI implements impBMI {
     private double weight;
     private int option;
     private double bmi;

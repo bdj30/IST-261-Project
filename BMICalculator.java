@@ -6,10 +6,10 @@ public class BMICalculator {
     
    public static void main(String args[]) 
    {
-      //TestHarness h = new TestHarness();
-      //h.testClassHierarchy();
+      TestHarness h = new TestHarness();
+      h.testInterface();
       //new LoginGUI();
-      new MainGUI();
+      //new MainGUI();
    }
 }
 
