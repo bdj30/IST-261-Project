@@ -1,4 +1,4 @@
-public class Convert {
+public class Convert extends impConvert {
     //for now 0 = convert to kg, 1 = convert to lbs
     private int option;
     private double initialWeight;
@@ -16,12 +16,12 @@ public class Convert {
     //check to see what conversion were doing and do it
     public double convertion(int op){
         if (op == 0) {
-            convertedWeight = lbsToKg();
+            convertedWeight = kgCon();
             this.convertedWeight = convertedWeight;
             return convertedWeight;
         }
         if(op == 1){
-            convertedWeight = kgToLbs();
+            convertedWeight = lbsCon();
             this.convertedWeight = convertedWeight;
             return convertedWeight;
         }
@@ -29,19 +29,19 @@ public class Convert {
     }
 
     //convertion methods
-    public double lbsToKg(){
+
+    @Override
+    public double kgCon() {
         double convertedWeight = initialWeight * lbs;
         return convertedWeight;
     }
-
-    public double kgToLbs(){
+    @Override
+    public double lbsCon() {
         double convertedWeight = initialWeight * kg;
-        return  convertedWeight;
+        return convertedWeight;
     }
 
     //getters
-
-
     public int getOption() {
         return option;
     }
@@ -79,4 +79,6 @@ public class Convert {
                 ", convertedWeight=" + convertedWeight+
                 '}';
     }
+
+
 }

@@ -13,15 +13,24 @@ public class MainGUI {
         JPanel pan5 = new JPanel();
 
         JLabel tHeight = new JLabel("Height");
-        JTextField fHeight = new JTextField(2);
-
+        JTextField fHeight = new JTextField(5);
+        JLabel tWeight = new JLabel("Weight");
+        JTextField fWeight = new JTextField(5);
 
 
         pan2.add(tHeight);
         pan2.add(fHeight);
+        pan2.add(tWeight);
+        pan2.add(fWeight);
 
+        JLabel whichSwitch = new JLabel("What would ");
 
-
+        JRadioButton opBut0 = new JRadioButton();
+        JLabel opLab1 = new JLabel("KG");
+        JRadioButton opBut1 = new JRadioButton();
+        ButtonGroup opBG = new ButtonGroup();
+        opBG.add(opBut0);
+        opBG.add(opBut1);
 
         frame.add(pan1);
         frame.add(pan2);

@@ -45,7 +45,8 @@ public class LoginGUI {
         //events
         loginBut.addActionListener(e ->{
             if (e.getSource() == loginBut && !tUser.getText().equals("")&& !tPass.getText().equals("")){
-                System.out.println("it works");
+                new MainGUI();
+                frame.setVisible(false);
             }
         });
 

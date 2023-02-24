@@ -1,4 +1,3 @@
-import java.util.Optional;
 
 public class TrackData extends Convert{
     int day;
@@ -41,12 +40,12 @@ public class TrackData extends Convert{
     @Override//override for assignment
     public double convertion(int op){
         if (op == 0) {
-            convertedWeight = lbsToKg();
+            convertedWeight = kgCon();
             this.convertedWeight = convertedWeight * 5;
             return convertedWeight;
         }
         if(op == 1){
-            convertedWeight = kgToLbs();
+            convertedWeight = lbsCon();
             this.convertedWeight = convertedWeight * 5;
             return convertedWeight;
         }

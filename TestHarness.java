@@ -32,8 +32,8 @@ public class TestHarness {
     }
     
     public void testClassHierarchy() {
-        ArrayList<Login> trackList = new ArrayList<Login>();
-        ArrayList<Convert> youSir = new ArrayList<Convert>();
+        ArrayList<Login> trackList = new ArrayList<>();
+        ArrayList<Convert> youSir = new ArrayList<>();
 
         Login day = new Login("User","Pass");
         Convert uName = new Convert(1, 200);
