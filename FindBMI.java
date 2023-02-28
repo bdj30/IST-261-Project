@@ -5,18 +5,24 @@ public class FindBMI implements impBMI {
     private int option;
     private double bmi;
     private int age;
+    private double height;
 
-    public FindBMI(double weight, int option, int age) {
+    public FindBMI(double weight, int option, int age, double height) {
         this.weight = weight;
         this.option = option;
         this.age = age;
+        this.height = height;
     }
 
     public void calBMIMeters(double height, double weight) {
-
+        double tHeight = pow(height, 2);
+        double BMI = weight/tHeight;
+        this.bmi = bmi;
     }
     public void calBmiUsa(double height, double weight) {
-
+        double tHeight = pow(height, 2);
+        double BMI = weight/tHeight;
+        this.bmi = bmi;
     }
 
     public double getWeight() {
