@@ -1,4 +1,4 @@
-public class Convert implements impConvert {
+public class Convert implements impCon {
     //for now 0 = convert to kg, 1 = convert to lbs
     private int option;
     private double initialWeight;
@@ -30,12 +30,12 @@ public class Convert implements impConvert {
 
     //convertion methods
 
-    @Override
+
     public double kgCon() {
         double convertedWeight = initialWeight * lbs;
         return convertedWeight;
     }
-    @Override
+
     public double lbsCon() {
         double convertedWeight = initialWeight * kg;
         return convertedWeight;
@@ -50,9 +50,11 @@ public class Convert implements impConvert {
         return initialWeight;
     }
 
-    public double getConvertedWeight() {
+    @Override
+    public double getConvertion() {
         return convertedWeight;
     }
+
     //setters
 
     public void setOption(int option) {
@@ -79,6 +81,7 @@ public class Convert implements impConvert {
                 ", convertedWeight=" + convertedWeight+
                 '}';
     }
+
 
 
 }

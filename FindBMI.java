@@ -1,6 +1,6 @@
 import static java.lang.Math.pow;
 
-public class FindBMI implements impBMI {
+public class FindBMI implements impCon {
     private double weight;
     private int option;
     private double bmi;
@@ -41,13 +41,15 @@ public class FindBMI implements impBMI {
         this.option = option;
     }
 
-    public double getBmi() {
+    @Override
+    public double getConvertion() {
         return bmi;
     }
 
     public void setBmi(double bmi) {
         this.bmi = bmi;
     }
+
 
 
 }
