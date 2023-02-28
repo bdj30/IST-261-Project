@@ -12,17 +12,27 @@ public class FindBMI implements impCon {
         this.option = option;
         this.age = age;
         this.height = height;
+
+    }
+    public double checkConvertion(){
+        if(option == 0){
+            bmi =calBMIMeters(height, weight);
+        }
+        if(option == 1){
+           bmi = calBmiUsa(height, weight);
+        }
+        return bmi;
     }
 
-    public void calBMIMeters(double height, double weight) {
+    public double calBMIMeters(double height, double weight) {
         double tHeight = pow(height, 2);
         double BMI = weight/tHeight;
-        this.bmi = bmi;
+        return BMI;
     }
-    public void calBmiUsa(double height, double weight) {
+    public double calBmiUsa(double height, double weight) {
         double tHeight = pow(height, 2);
         double BMI = weight/tHeight;
-        this.bmi = bmi;
+        return BMI;
     }
 
     public double getWeight() {
@@ -51,5 +61,14 @@ public class FindBMI implements impCon {
     }
 
 
-
+    @Override
+    public String toString() {
+        return "FindBMI{" +
+                "weight=" + weight +
+                ", option=" + option +
+                ", bmi=" + bmi +
+                ", age=" + age +
+                ", height=" + height +
+                '}';
+    }
 }

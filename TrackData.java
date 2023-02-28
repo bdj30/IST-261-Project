@@ -37,7 +37,7 @@ public class TrackData extends Convert{
         this.year = year;
     }
 
-    @Override//override for assignment
+    //override for assignment
     public double convertion(int op){
         if (op == 0) {
             convertedWeight = kgCon();
@@ -49,7 +49,7 @@ public class TrackData extends Convert{
             this.convertedWeight = convertedWeight * 5;
             return convertedWeight;
         }
-        else return 0.0;
+        else return 0.69;
     }
 
     @Override

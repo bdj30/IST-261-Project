@@ -52,23 +52,26 @@ public class TestHarness {
 
         //original methods
         uName.kgCon();
-        System.out.println(uName.getConvertedWeight());
+        System.out.println(uName.getConvertion());
         day.setpWord("bob");
         System.out.println(day.getpWord() +"\n"+ "------------\n" + "OverWritten classes");
 
         //Overwritten methods
         tr.convertion(1);
-        System.out.println(tr.getConvertedWeight());
+        System.out.println(tr.getConvertion());
         u.setpWord("Bob");
         System.out.println(u.getpWord());
     }
 
     public void testInterface(){
-       ArrayList<impConvert> impLists = new ArrayList<>();
+       ArrayList<Object> impLists = new ArrayList<>();
        Convert con = new Convert(1,200);
+       FindBMI fb = new FindBMI(200,1, 19,61);
        impLists.add(con);
-       con.kgCon();
-       con.lbsCon();
+       impLists.add(fb);
+        System.out.println("Interface 1: Convert getConvertion() ->" + con.getConvertion() + ",  FindBMI getConvertion() ->" + fb.getConvertion());
+        System.out.println("Interface 2: Convert checkConvertion ->" + con.checkConvertion() + ", FindBMI checkConvertion() -> "+ fb.checkConvertion());
+        System.out.println("---------\n" + impLists);
 
 
     }

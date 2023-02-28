@@ -10,23 +10,10 @@ public class Convert implements impCon {
     public Convert(int option, double initialWeight) {
         this.option = option;
         this.initialWeight = initialWeight;
-        convertedWeight = convertion(option);
+        convertedWeight = checkConvertion();
     }
 
     //check to see what conversion were doing and do it
-    public double convertion(int op){
-        if (op == 0) {
-            convertedWeight = kgCon();
-            this.convertedWeight = convertedWeight;
-            return convertedWeight;
-        }
-        if(op == 1){
-            convertedWeight = lbsCon();
-            this.convertedWeight = convertedWeight;
-            return convertedWeight;
-        }
-        else return 0.0;
-    }
 
     //convertion methods
 
@@ -53,6 +40,22 @@ public class Convert implements impCon {
     @Override
     public double getConvertion() {
         return convertedWeight;
+    }
+
+    @Override
+    public double checkConvertion() {
+
+        if (option == 0) {
+            convertedWeight = kgCon();
+            this.convertedWeight = convertedWeight;
+            return convertedWeight;
+        }
+        if(option == 1){
+            convertedWeight = lbsCon();
+            this.convertedWeight = convertedWeight;
+            return convertedWeight;
+        }
+        else return 6.9;
     }
 
     //setters
