@@ -1,8 +1,10 @@
+
 public class User extends Login{
     private String name;
     private int age;
     private double weight;
     private double height;
+
 
     public User(String name, int age, double weight, double height, String uName, String pWord) {
         super(uName, pWord);

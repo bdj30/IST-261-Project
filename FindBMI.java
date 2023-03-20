@@ -7,7 +7,7 @@ public class FindBMI implements impCon {
     private int age;
     private double height;
 
-    public FindBMI(double weight, int option, int age, double height) {
+    public FindBMI(double weight, int option) {
         this.weight = weight;
         this.option = option;
         this.age = age;

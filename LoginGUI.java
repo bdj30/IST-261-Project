@@ -2,9 +2,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.HashMap;
 
-public class LoginGUI {
-    private HashMap<String,String> users = new HashMap<>();
+public class LoginGUI{
+
     public LoginGUI(){
+
         JFrame frame = new JFrame("Login");
         frame.setLayout(new GridLayout(3,1));
 
@@ -53,5 +54,6 @@ public class LoginGUI {
         frame.setSize(200,250);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
     }
 }
