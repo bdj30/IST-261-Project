@@ -79,11 +79,11 @@ public class TestHarness {
 
     public void checkCollections(){
         //tree map
-        TrackData td1 = new TrackData(1,100,LocalDate.now());
+        TrackData td1 = new TrackData(1,100, 72,LocalDate.now());
         td1.addEntry(LocalDate.now(), td1.getBMI());
-        TrackData td2 = new TrackData(0,200,LocalDate.now());
-        TrackData td3 = new TrackData(1,300,LocalDate.now());
-        TrackData td4 = new TrackData(0,400,LocalDate.now());
+        TrackData td2 = new TrackData(0,200, 72,LocalDate.now());
+        TrackData td3 = new TrackData(1,300, 72,LocalDate.now());
+        TrackData td4 = new TrackData(0,400, 72,LocalDate.now());
         System.out.println("date " + LocalDate.now() + td1.findEntry(LocalDate.now()));
         System.out.println("Date 2023-9-10 " + td1.findEntry(LocalDate.ofEpochDay(2023-9-11)));
         double nowDate = td1.findBmiOnDate(LocalDate.now());

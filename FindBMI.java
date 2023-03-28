@@ -7,21 +7,21 @@ public class FindBMI implements impCon {
     private int age;
     private double height;
 
-    public FindBMI(double weight, int option) {
+    public FindBMI(double weight, int option, double height) {
         this.weight = weight;
         this.option = option;
-        this.age = age;
         this.height = height;
 
     }
     public double checkConvertion(){
+        double tempBMI = 0;
         if(option == 0){
-            bmi =calBMIMeters(height, weight);
+            tempBMI =calBMIMeters(height, weight);
         }
         if(option == 1){
-           bmi = calBmiUsa(height, weight);
+           tempBMI = calBmiUsa(height, weight);
         }
-        return bmi;
+        return tempBMI;
     }
 
     public double calBMIMeters(double height, double weight) {
@@ -60,6 +60,13 @@ public class FindBMI implements impCon {
         this.bmi = bmi;
     }
 
+    public double getHeight() {
+        return height;
+    }
+
+    public void setHeight(double height) {
+        this.height = height;
+    }
 
     @Override
     public String toString() {

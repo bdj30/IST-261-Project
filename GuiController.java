@@ -7,7 +7,10 @@ public class GuiController {
         this.model = model;
         this.data = data;
 
+        // updates the date text field
         model.form().getDateText().setText(data.getDate().toString());
+        //updates the Bmi text field
+        model.form().getBmiText().setText(data.getStringBMI());
     }
 
 }

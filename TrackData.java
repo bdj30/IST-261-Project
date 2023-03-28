@@ -8,10 +8,10 @@ public class TrackData extends FindBMI{
     protected int option;
     protected double initialWeight;
     protected double BMI;
-    Map<LocalDate,Double> usersList = new TreeMap<>();
+    TreeMap<LocalDate,Double> usersList = new TreeMap<>();
 
-    public TrackData(int option, double initialWeight, LocalDate day) {
-        super(initialWeight, option);
+    public TrackData(int option, double initialWeight, double height,LocalDate day) {
+        super(initialWeight, option, height);
         this.date = day;
         this.initialWeight = initialWeight;
         BMI = checkConvertion();
@@ -42,7 +42,7 @@ public class TrackData extends FindBMI{
         if(usersList.containsKey(day) && usersList != null) return usersList.get(day);
         else {
             System.out.println("Entry either dose not exsist or list is null");
-            return -1;
+            return 1.0;
         }
     }
     public void displayData(){
@@ -50,13 +50,14 @@ public class TrackData extends FindBMI{
     }
 
     public void addEntry(LocalDate today, Double bmi){
+
         if(!usersList.containsKey(today)){
             usersList.put(today,bmi);
         }
         if(usersList.containsKey(today)){
             if(usersList.containsValue(bmi)){
                 System.out.println("Data entry already exist");
-            }else usersList.replace(today,bmi);
+            }else usersList.put(today,bmi);
 
         }
     }
@@ -85,6 +86,9 @@ public class TrackData extends FindBMI{
 
     public double getBMI() {
         return BMI;
+    }
+    public String getStringBMI(){
+        return String.valueOf(getBMI());
     }
 
     public void setBMI(double BMI) {
