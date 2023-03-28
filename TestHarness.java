@@ -86,7 +86,8 @@ public class TestHarness {
         TrackData td4 = new TrackData(0,400,LocalDate.now());
         System.out.println("date " + LocalDate.now() + td1.findEntry(LocalDate.now()));
         System.out.println("Date 2023-9-10 " + td1.findEntry(LocalDate.ofEpochDay(2023-9-11)));
-        System.out.println("data on list = " + td1.findBmiOnDate(LocalDate.now()));
+        double nowDate = td1.findBmiOnDate(LocalDate.now());
+        System.out.println("data on list = " + ( nowDate > 0 ?nowDate : "Doesn't exist"));
         System.out.println("data not on the list= " +td1.findBmiOnDate(LocalDate.ofEpochDay(2023-1-22)));
         td1.removeEntry(LocalDate.now());
         td1.displayData();

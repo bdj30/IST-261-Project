@@ -1,28 +1,20 @@
+import MVC.HelloController;
+import MVC.HelloLogic;
+import MVC.WrapperModel;
 import com.sun.tools.javac.Main;
- 
+
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class BMICalculator {
     
    public static void main(String args[]) 
    {
-//      FindBMI fb = new FindBMI(200,1,19, 61);
-//      Convert con = new Convert(1, 200);
-      TestHarness h = new TestHarness();
-      h.checkCollections();
-//      h.testInterface();
 
-
-      //new ShippingQueue();
-
-      //new LoginGUI();
-      //new MainGUI();
-
+      TrackData day1 = new TrackData(1,200, LocalDate.now());
+      day1.addEntry(day1.getDate(), day1.getBMI());
+      GuiLogic model = new GuiLogic("Text of Text");
+      GuiController controller = new GuiController(model, day1);
 
    }
 }
-
-/*
-gui for login
-keep track of weight
- */
