@@ -2,10 +2,12 @@ public class GuiController {
 
     private TrackData data;
     private GuiLogic model;
-
+    private int currentEntryIndex;
+    
     public GuiController(GuiLogic model, TrackData data){
         this.model = model;
         this.data = data;
+        this.currentEntryIndex = 0;
 
         // updates the date text field
         model.form().getDateText().setText(data.getDate().toString());
@@ -23,6 +25,20 @@ public class GuiController {
                 JOptionPane.showMessageDialog(model.form(), "No previous entry available");
             }
         });
+        
+         model.form().getNextButton().addActionListener(e -> {
+            TrackData nextEntry = data.getEntry(currentEntryIndex + 1);
+            if (nextEntry != null) {
+                // update the data and GUI form with the next entry
+                data = nextEntry;
+                currentEntryIndex++;
+                model.form().getDateText().setText(data.getDate().toString());
+                model.form().getBmiText().setText(data.getStringBMI());
+            } else {
+                JOptionPane.showMessageDialog(model.form(), "No next entry available");
+            }
+        });
+        
     }
 
 }
