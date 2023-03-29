@@ -60,6 +60,28 @@ public class GuiController {
         model.form().getBmiText().setText(currentEntry.getStringBMI());
     });
         
+        model.form().getDeleteButton().addActionListener(e -> {
+    // remove the current entry from the data list
+    data.removeEntry(currentEntryIndex);
+    // check if there are any remaining entries
+    if (data.size() > 0) {
+        // if there are remaining entries, update the GUI form with the first entry
+        currentEntryIndex = 0;
+        TrackData firstEntry = data.getEntry(currentEntryIndex);
+        model.form().getDateText().setText(firstEntry.getDate().toString());
+        model.form().getWeightText().setText(firstEntry.getWeight());
+        model.form().getHeightText().setText(firstEntry.getHeight());
+        firstEntry.calculateBMI();
+        model.form().getBmiText().setText(firstEntry.getStringBMI());
+    } else {
+        // if there are no remaining entries, clear the GUI form
+        model.form().getDateText().setText("");
+        model.form().getWeightText().setText("");
+        model.form().getHeightText().setText("");
+        model.form().getBmiText().setText("");
+    }
+});
+        
     }
 
 }
