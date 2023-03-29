@@ -45,7 +45,7 @@ public class GuiController {
              //check if next in arraylist is not null
              tempI = i;
              tempI++;
-             i = tempI > mod2.ModelLists.size() ? i : tempI;
+             i = tempI > mod2.ModelLists.size() -1 ? i : tempI;
              // get and display the next index or the current if next is null
              mod2.ModelLists.get(i);
              model.form().getDateText().setText(mod2.ModelLists.get(i).getDate().toString());
@@ -64,7 +64,7 @@ public class GuiController {
             //check and see if the displayed data match the stored data
             if(!mod2.ModelLists.get(i).getDate().toString().equals(model.form().getDateText())
                     || !mod2.ModelLists.get(i).getStringBMI().equals(model.form().getBmiText())){
-                //if data dose not match then overwrite data
+                //if data does not match then overwrite data
                 LocalDate newDate = LocalDate.parse(model.form().getDateText().getText());
                 mod2.ModelLists.get(i).setDate(newDate);
                 double newBMI = Double.parseDouble(model.form().getBmiText().getText());
