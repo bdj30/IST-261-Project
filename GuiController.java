@@ -45,7 +45,7 @@ public class GuiController {
              //check if next in arraylist is not null
              tempI = i;
              tempI++;
-             i = tempI < 0 ? i : tempI;
+             i = tempI > mod2.ModelLists.size() ? i : tempI;
              // get and display the next index or the current if next is null
              mod2.ModelLists.get(i);
              model.form().getDateText().setText(mod2.ModelLists.get(i).getDate().toString());
