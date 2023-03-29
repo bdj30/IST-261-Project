@@ -39,6 +39,16 @@ public class GuiController {
             }
         });
         
+         model.form().getAddButton().addActionListener(e -> {
+            // create a new TrackData object with default values
+            TrackData newEntry = new TrackData();
+            data.addEntry(newEntry);
+            currentEntryIndex = data.size() - 1;
+            // update the GUI form with the new entry
+            model.form().getDateText().setText(newEntry.getDate().toString());
+            model.form().getBmiText().setText(newEntry.getStringBMI());
+        });
+        
     }
 
 }
