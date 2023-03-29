@@ -49,6 +49,17 @@ public class GuiController {
             model.form().getBmiText().setText(newEntry.getStringBMI());
         });
         
+        model.form().getUpdateButton().addActionListener(e -> {
+        // get the current entry and update its values
+        TrackData currentEntry = data.getEntry(currentEntryIndex);
+        currentEntry.setDate(model.form().getDateText().getText());
+        currentEntry.setWeight(model.form().getWeightText().getText());
+        currentEntry.setHeight(model.form().getHeightText().getText());
+        // recalculate and update the BMI value
+        currentEntry.calculateBMI();
+        model.form().getBmiText().setText(currentEntry.getStringBMI());
+    });
+        
     }
 
 }
