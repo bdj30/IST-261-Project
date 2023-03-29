@@ -81,6 +81,10 @@ public class GuiController {
         model.form().getBmiText().setText("");
     }
 });
+      
+        model.form().getQuitButton().addActionListener(e -> {
+    System.exit(0);
+});
         
     }
 
