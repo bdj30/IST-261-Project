@@ -36,6 +36,13 @@ public class GuiController {
             //currentInstrument = instrumentCntl.getInstrument(selectedRow); //calls the getInstrument method 
             //initComponents();
             //parseInstrument();  //new method that must be added
+        
+        //populate the UI fields with data from the current instrument
+        //public void parseInstrument(){
+            //typeField.setText(currentInstrument.getType());
+            //mfgField.setText(currentInstrument.getManufacturer());
+            //modelField.setText(currentInstrument.getModel());
+}
 }
 }
         
