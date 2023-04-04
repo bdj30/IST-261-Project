@@ -32,7 +32,16 @@ public class DateList {
         pan1.add(scrollBar1);
     }
 
-
+// public class DetailsButtonListener implements ActionListener{
+  //  public void actionPerformed(ActionEvent evt){
+    //    int selectedTableRow = jTable.getSelectedRow();
+     //   int selectedModelRow = jTable.convertRowIndexToModel(selectedTableRow);
+     //   if(selectedModelRow < 0) //if the user does not highlight a row, this will be -1
+     //      selectedModelRow = 0; //set the model row to the first element in the list
+     //   InstrumentListUI.this.ListController.getInstrumentDetailUI(selectedModelRow);
+   }
+}
+    
     public JScrollBar getScrollBar1() {
         return scrollBar1;
     }
