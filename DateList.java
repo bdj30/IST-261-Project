@@ -38,7 +38,7 @@ public class DateList {
      //   int selectedModelRow = jTable.convertRowIndexToModel(selectedTableRow);
      //   if(selectedModelRow < 0) //if the user does not highlight a row, this will be -1
      //      selectedModelRow = 0; //set the model row to the first element in the list
-     //   ListModel.this.ListController.getListMod2(selectedModelRow);
+     //   ListModel.this.ListController.getModelTwo(selectedModelRow);
    }
 }
     
