@@ -7,6 +7,14 @@ public class ModelTwo {
         ModelLists.add(data);
 
     }
+
+    public ArrayList<TrackData> getModelLists() {
+        return ModelLists;
+    }
+
+    public void setModelLists(ArrayList<TrackData> modelLists) {
+        ModelLists = modelLists;
+    }
     @Override
     public String toString() {
         return "ModelTwo{" +
