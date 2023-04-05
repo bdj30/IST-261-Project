@@ -96,10 +96,12 @@ public class TrackData extends FindBMI{
     }
 
 
-
     @Override
     public String toString() {
-        return "TrackData{" + "date=" +date +
-                '}';
+        return "TrackData{" +
+                "date=" + date +
+                ", option=" + option +
+                ", initialWeight=" + initialWeight +
+                ", BMI=" + BMI + '}';
     }
 }

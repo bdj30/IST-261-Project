@@ -1,8 +1,9 @@
 import javax.swing.table.AbstractTableModel;
+import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList;
 
 public class ListModel extends AbstractTableModel {
-    protected String[] columnNames = {"Type", "Manufacturer", "Model"};
+    protected String[] columnNames = {"Date","BMI"};
     private ArrayList<TrackData> bmiList;
 
     public ListModel(ArrayList<TrackData> list){
@@ -18,7 +19,7 @@ public class ListModel extends AbstractTableModel {
 
     @Override
     public int getColumnCount() {
-        return 0;
+        return columnNames.length;
     }
 
     @Override
@@ -28,5 +29,21 @@ public class ListModel extends AbstractTableModel {
             case 1: return (Object) bmiList.get(row).getBMI();
             default: return null;
         }
+    }
+
+    public String[] getColumnNames() {
+        return columnNames;
+    }
+
+    public void setColumnNames(String[] columnNames) {
+        this.columnNames = columnNames;
+    }
+
+    public ArrayList<TrackData> getBmiList() {
+        return bmiList;
+    }
+
+    public void setBmiList(ArrayList<TrackData> bmiList) {
+        this.bmiList = bmiList;
     }
 }

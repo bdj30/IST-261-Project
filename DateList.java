@@ -8,30 +8,18 @@ public class DateList {
     private JButton DelBut;
     private JScrollBar scrollBar1;
     private JButton addBut;
-    ListController c;
 
-    public DateList(ListController c){
-        this.c=c;
-        initComponents();
+    public DateList(){
     }
 
-    public void initComponents(){
-        jTable = new JTable(c.getListModel());
-//        jTable.getColumnModel().getColumn(0).setPreferredWidth(25);
-//        jTable.getColumnModel().getColumn(1).setPreferredWidth(50);
-        //detailsButton.addActionListener(new DetailsButtonListener());
-        pan1.add(addBut);
-        pan1.add(selBut);
-        pan1.add(DelBut);
-        //if data goes off screen use code below
-        //scrollBar1 = new JScrollPane(jTable);
-        jTable.setFillsViewportHeight(true);
-        //scrollBar1.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-        scrollBar1.setOrientation(JScrollBar.VERTICAL);
-        scrollBar1.setPreferredSize(new Dimension(350,300));
-        pan1.add(scrollBar1);
+
+    public JButton getSelBut() {
+        return selBut;
     }
 
+    public void setSelBut(JButton selBut) {
+        this.selBut = selBut;
+    }
 
     public JScrollBar getScrollBar1() {
         return scrollBar1;
