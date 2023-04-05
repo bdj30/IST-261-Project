@@ -25,32 +25,11 @@ public class GuiController {
         mod2.addData(day2);
         mod2.addData(day3);
 
-        //public void getInstrumentUI(int selectedRow){
-          //theInstrumentUI = new InstrumentUI(this, selectedRow);
-          //theInstrumentListUI.setVisible(false);
-          //theInstrumentUI.setVisible(true);
-        
-       // public InstrumentUI(InstrumentCntl newInstrumentCntl, int selectedRow){
-            //instrumentCntl = newInstrumentCntl;
-            //currentSelectedRow = selectedRow;
-            //currentInstrument = instrumentCntl.getInstrument(selectedRow); //calls the getInstrument method 
-            //initComponents();
-            //parseInstrument();  //new method that must be added
-        
-        //populate the UI fields with data from the current instrument
-        //public void parseInstrument(){
-            //typeField.setText(currentInstrument.getType());
-            //mfgField.setText(currentInstrument.getManufacturer());
-            //modelField.setText(currentInstrument.getModel());
-}
-}
-}
-        
         // updates the date text field
         model.form().getDateText().setText(mod2.ModelLists.get(i).getDate().toString());
         //updates the Bmi text field
         model.form().getBmiText().setText(mod2.ModelLists.get(i).getStringBMI());
-        
+
         model.form().getPreBut().addActionListener(e -> {
             //check if previous in arraylist is not null
             tempI = i;
@@ -61,20 +40,20 @@ public class GuiController {
             model.form().getDateText().setText(mod2.ModelLists.get(i).getDate().toString());
             model.form().getBmiText().setText(mod2.ModelLists.get(i).getStringBMI());
         });
-        
-         model.form().getNextBut().addActionListener(e -> {
-             //check if next in arraylist is not null
-             tempI = i;
-             tempI++;
-             i = tempI > mod2.ModelLists.size() - 1 ? i : tempI;
-             // get and display the next index or the current if next is null
-             mod2.ModelLists.get(i);
-             model.form().getDateText().setText(mod2.ModelLists.get(i).getDate().toString());
-             model.form().getBmiText().setText(mod2.ModelLists.get(i).getStringBMI());
+
+        model.form().getNextBut().addActionListener(e -> {
+            //check if next in arraylist is not null
+            tempI = i;
+            tempI++;
+            i = tempI > mod2.ModelLists.size() - 1 ? i : tempI;
+            // get and display the next index or the current if next is null
+            mod2.ModelLists.get(i);
+            model.form().getDateText().setText(mod2.ModelLists.get(i).getDate().toString());
+            model.form().getBmiText().setText(mod2.ModelLists.get(i).getStringBMI());
 
         });
 
-         model.form().getAddBut().addActionListener(e -> {
+        model.form().getAddBut().addActionListener(e -> {
             // create a new TrackData object with values
             TrackData newEntry = new TrackData(1, 150, 65, LocalDate.now().plusDays(4));
             //add the new entry into the arrayList
@@ -94,28 +73,30 @@ public class GuiController {
                 model.form().getDateText().setText(mod2.ModelLists.get(i).getDate().toString());
                 model.form().getBmiText().setText(mod2.ModelLists.get(i).getStringBMI());
             }
-    });
+        });
 
         model.form().getDelBut().addActionListener(e -> {
-    // remove the current entry from the data list
+            // remove the current entry from the data list
             mod2.ModelLists.remove(i);
-    // check if there are any remaining entries
-    if (mod2.ModelLists.size() > 0) {
-        // if there are remaining entries, update the GUI form with the first entry
-        i = 0;
-        model.form().getDateText().setText(mod2.ModelLists.get(i).getDate().toString());
-        model.form().getBmiText().setText(mod2.ModelLists.get(i).getStringBMI());
-    } else {
-        // if there are no remaining entries, clear the GUI form
-        model.form().getDateText().setText("No data in List");
-        model.form().getBmiText().setText("No data in List");
-    }
-});
+            // check if there are any remaining entries
+            if (mod2.ModelLists.size() > 0) {
+                // if there are remaining entries, update the GUI form with the first entry
+                i = 0;
+                model.form().getDateText().setText(mod2.ModelLists.get(i).getDate().toString());
+                model.form().getBmiText().setText(mod2.ModelLists.get(i).getStringBMI());
+            } else {
+                // if there are no remaining entries, clear the GUI form
+                model.form().getDateText().setText("No data in List");
+                model.form().getBmiText().setText("No data in List");
+            }
+        });
 
         model.form().getQuitBut().addActionListener(e -> {
-    System.exit(0);
-});
-        
+            System.exit(0);
+        });
+
     }
 
 }
+
+
