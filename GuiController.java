@@ -25,6 +25,27 @@ public class GuiController {
         mod2.addData(day2);
         mod2.addData(day3);
 
+        //public void getInstrumentUI(int selectedRow){
+          //theInstrumentUI = new InstrumentUI(this, selectedRow);
+          //theInstrumentListUI.setVisible(false);
+          //theInstrumentUI.setVisible(true);
+        
+       // public InstrumentUI(InstrumentCntl newInstrumentCntl, int selectedRow){
+            //instrumentCntl = newInstrumentCntl;
+            //currentSelectedRow = selectedRow;
+            //currentInstrument = instrumentCntl.getInstrument(selectedRow); //calls the getInstrument method 
+            //initComponents();
+            //parseInstrument();  //new method that must be added
+        
+        //populate the UI fields with data from the current instrument
+        //public void parseInstrument(){
+            //typeField.setText(currentInstrument.getType());
+            //mfgField.setText(currentInstrument.getManufacturer());
+            //modelField.setText(currentInstrument.getModel());
+}
+}
+}
+        
         // updates the date text field
         model.form().getDateText().setText(mod2.ModelLists.get(i).getDate().toString());
         //updates the Bmi text field
