@@ -7,11 +7,13 @@ public class TrackData extends FindBMI{
     protected LocalDate date;
     protected int option;
     protected double initialWeight;
+    protected double height;
     protected double BMI;
     TreeMap<LocalDate,Double> usersList = new TreeMap<>();
 
     public TrackData(int option, double initialWeight, double height,LocalDate day) {
         super(initialWeight, option, height);
+        this.height = height;
         this.date = day;
         this.initialWeight = initialWeight;
         BMI = checkConvertion();
@@ -95,6 +97,15 @@ public class TrackData extends FindBMI{
         this.BMI = BMI;
     }
 
+    @Override
+    public double getHeight() {
+        return height;
+    }
+
+    @Override
+    public void setHeight(double height) {
+        this.height = height;
+    }
 
     @Override
     public String toString() {
@@ -102,6 +113,6 @@ public class TrackData extends FindBMI{
                 "date=" + date +
                 ", option=" + option +
                 ", initialWeight=" + initialWeight +
-                ", BMI=" + BMI + '}';
+                ", BMI=" + BMI + "Height=" + height + '}';
     }
 }

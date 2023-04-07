@@ -8,7 +8,7 @@ public class ListLogic extends JFrame{
         JPanel content = form.getPan1();
         this.setContentPane(content);
         this.setVisible(true);
-        this.setSize(275,250);
+        this.setSize(500,400);
         this.setTitle(text);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }

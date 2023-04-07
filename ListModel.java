@@ -1,5 +1,4 @@
 import javax.swing.table.AbstractTableModel;
-import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList;
 
 public class ListModel extends AbstractTableModel {
@@ -25,8 +24,8 @@ public class ListModel extends AbstractTableModel {
     @Override
     public Object getValueAt(int row, int col) {
         switch(col){
-            case 0: return (Object) bmiList.get(row).getDate();
-            case 1: return (Object) bmiList.get(row).getBMI();
+            case 0: return bmiList.get(row).getDate();
+            case 1: return bmiList.get(row).getBMI();
             default: return null;
         }
     }
