@@ -1,5 +1,4 @@
 import javax.swing.*;
-import java.awt.*;
 
 public class DateList {
     private JPanel pan1;
@@ -8,6 +7,8 @@ public class DateList {
     private JButton DelBut;
     private JScrollBar scrollBar1;
     private JButton addBut;
+    private JButton refreshButton;
+    private JButton seBut;
 
     public DateList(){
     }
@@ -46,7 +47,7 @@ public class DateList {
     }
 
     public JButton getAddBut() {
-        return selBut;
+        return addBut;
     }
 
     public void setAddBut(JButton addBut) {
@@ -61,4 +62,19 @@ public class DateList {
         DelBut = delBut;
     }
 
+    public JButton getRefreshButton() {
+        return refreshButton;
+    }
+
+    public void setRefreshButton(JButton refreshButton) {
+        this.refreshButton = refreshButton;
+    }
+
+    public JButton getSeBut() {
+        return seBut;
+    }
+
+    public void setSeBut(JButton seBut) {
+        this.seBut = seBut;
+    }
 }

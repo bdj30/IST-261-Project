@@ -1,15 +1,16 @@
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Map;
 import java.util.StringTokenizer;
 import java.util.TreeMap;
 
-public class TrackData extends FindBMI{
+public class TrackData extends FindBMI implements Serializable {
     protected LocalDate date;
     protected int option;
     protected double initialWeight;
     protected double height;
     protected double BMI;
-    TreeMap<LocalDate,Double> usersList = new TreeMap<>();
+    transient TreeMap<LocalDate,Double> usersList = new TreeMap<>();
 
     public TrackData(int option, double initialWeight, double height,LocalDate day) {
         super(initialWeight, option, height);
@@ -18,22 +19,6 @@ public class TrackData extends FindBMI{
         this.initialWeight = initialWeight;
         BMI = checkConvertion();
     }
-
-
-    //override for assignment
-//    public double convertion(int op){
-//        if (op == 0) {
-//            convertedWeight = kgCon();
-//            this.convertedWeight = convertedWeight * 5;
-//            return convertedWeight;
-//        }
-//        if(op == 1){
-//            convertedWeight = lbsCon();
-//            this.convertedWeight = convertedWeight * 5;
-//            return convertedWeight;
-//        }
-//        else return 0.69;
-//    }
 
     //collections methods
     public String findEntry(LocalDate date){

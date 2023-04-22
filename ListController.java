@@ -1,41 +1,50 @@
 import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
 import java.awt.*;
-import java.time.LocalDate;
+import java.io.*;
 import java.util.ArrayList;
 
-public class ListController extends ListModel {
-    ListLogic ll;
+//gui controller for dateList
+public class ListController extends ListModel{
+    transient ListLogic ll;
     //private ModelTwo AListMod = new ModelTwo();
     private ArrayList<TrackData> list;
     private ListModel LMod;
 
-
-
-    public ListController(ArrayList<TrackData> lists , ListLogic ll) {
+    public ListController(ArrayList<TrackData> lists , ListLogic ll) throws IOException, ClassNotFoundException {
         super(lists);
-        list = lists;
         this.ll = ll;
-        LMod = new ListModel(lists);
+        ArrayList<TrackData> savedData = getSavedData();
+        list = savedData != null ? savedData : lists;
+        LMod = new ListModel(list);
         initComponents();
 
+        //select button action listener
+        ll.form().getSelBut().addActionListener(a -> new DetailedGUI(list.get((ll.form().getjTable().getSelectedRow()))));
 
-        ll.form().getSelBut().addActionListener(a ->{
-            Object index = this.getValueAt(ll.form().getjTable().getSelectedRow(), ll.form().getjTable().getSelectedColumn());
-            //int getFromList = list.get((ll.form().getjTable().getSelectedRow()));
-            //System.out.println(getFromList);
-            new DetailedGUI(list.get((ll.form().getjTable().getSelectedRow())));
-        });
+        //delete button action listener
         ll.form().getDelBut().addActionListener(a ->{
             if(list.size() > 0){
                 list.remove(ll.form().getjTable().getSelectedRow());
+           }else System.out.println("no data on list");
+            //updates the table
+            ((ListModel) ll.form().getjTable().getModel()).fireTableDataChanged();
+        });
+        //add button action listener
+        ll.form().getAddBut().addActionListener(a ->{
+            AddUser ad = new AddUser(list);
+            list = ad.getList();
 
-            }else System.out.println("no data on list");
+
+        });
+        // refresh button action listener
+        ll.form().getRefreshButton().addActionListener(a ->{
+            ((ListModel) ll.form().getjTable().getModel()).fireTableDataChanged();
         });
 
-        ll.form().getAddBut().addActionListener(a ->{
-            TrackData newtr = new TrackData(0,400,90,LocalDate.now().plusDays(5));
-            list.add(newtr);
+        //save and exit button action listener
+        ll.form().getSeBut().addActionListener(a ->{
+            setSaveData(list);
+            System.exit(0);
         });
     }
 
@@ -61,6 +70,40 @@ jsp.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         ll.form().getPan1().revalidate();
     }
 
+
+    public ArrayList<TrackData> getSavedData() {
+        FileInputStream fis;
+        ObjectInputStream in;
+        try {
+            fis = new FileInputStream("dataEntry.ser");
+            in = new ObjectInputStream(fis);
+            list = (ArrayList<TrackData>) in.readObject();
+            in.close();
+            if (!list.isEmpty()) {
+                System.out.println("There are users in the user list");
+            }
+        } catch (FileNotFoundException fne) {
+            System.out.println("File was not found, a new one will be created");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+    public void setSaveData(ArrayList<TrackData> doneList){
+        FileOutputStream fileOut;
+        ObjectOutputStream out;
+        try {
+            fileOut = new FileOutputStream("dataEntry.ser");
+            out = new ObjectOutputStream(fileOut);
+            out.writeObject(doneList);
+            out.close();
+            fileOut.close();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
     public ListModel getListModel(){
         return LMod;
     }

@@ -1,6 +1,8 @@
+import java.io.Serializable;
+
 import static java.lang.Math.pow;
 
-public class FindBMI implements impCon {
+public class FindBMI implements impCon , Serializable{
     private double weight;
     private int option;
     private double bmi;

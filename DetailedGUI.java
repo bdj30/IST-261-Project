@@ -15,6 +15,8 @@ public class DetailedGUI extends JFrame{
     public DetailedGUI(TrackData tr){
         this.setContentPane(getPan1());
 
+
+
         dateField.setText(tr.getDate().toString());
         bmiField.setText(tr.getStringBMI());
         weightFeild.setText(String.valueOf(tr.getWeight()));

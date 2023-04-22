@@ -1,4 +1,5 @@
 import javax.swing.table.AbstractTableModel;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 public class ListModel extends AbstractTableModel {

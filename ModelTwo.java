@@ -1,6 +1,7 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class ModelTwo {
+public class ModelTwo{
     ArrayList<TrackData> ModelLists = new ArrayList<>();
 
     public void addData(TrackData data){
