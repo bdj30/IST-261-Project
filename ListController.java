@@ -6,7 +6,6 @@ import java.util.ArrayList;
 //gui controller for dateList
 public class ListController extends ListModel{
     transient ListLogic ll;
-    //private ModelTwo AListMod = new ModelTwo();
     private ArrayList<TrackData> list;
     private ListModel LMod;
 
@@ -14,12 +13,17 @@ public class ListController extends ListModel{
         super(lists);
         this.ll = ll;
         ArrayList<TrackData> savedData = getSavedData();
-        list = savedData != null ? savedData : lists;
+        list = savedData.size() == 0 ? lists : savedData;
         LMod = new ListModel(list);
         initComponents();
 
         //select button action listener
-        ll.form().getSelBut().addActionListener(a -> new DetailedGUI(list.get((ll.form().getjTable().getSelectedRow()))));
+        ll.form().getSelBut().addActionListener(a ->{
+            if(!ll.form().getjTable().getSelectionModel().isSelectionEmpty()){
+                new DetailedGUI(list.get((ll.form().getjTable().getSelectedRow())));
+            }else System.out.println("Please select an option");
+
+        });
 
         //delete button action listener
         ll.form().getDelBut().addActionListener(a ->{
@@ -79,6 +83,7 @@ jsp.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
             in = new ObjectInputStream(fis);
             list = (ArrayList<TrackData>) in.readObject();
             in.close();
+            fis.close();
             if (!list.isEmpty()) {
                 System.out.println("There are users in the user list");
             }
